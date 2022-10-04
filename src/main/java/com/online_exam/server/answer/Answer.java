@@ -24,7 +24,6 @@ public class Answer {
 
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "stuid")
-    @JsonIgnore
     private Student student;
 
 

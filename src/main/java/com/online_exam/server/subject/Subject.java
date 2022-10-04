@@ -6,9 +6,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.online_exam.server.classroom.Classroom;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
-
+@CrossOrigin
 @Entity
 @Table(name = "subject")
 public class Subject {
@@ -20,9 +21,8 @@ public class Subject {
     private String name;
 
     @ManyToOne(fetch = FetchType.EAGER,optional = false)
-    @JoinColumn(name = "clsid",nullable = false)
+    @JoinColumn(name = "clsid",referencedColumnName = "clsid",nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
     private Classroom classroom;
 
     @Column(name = "status")
