@@ -1,13 +1,14 @@
 package com.online_exam.server.classroom;
+
+
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "classroom")
 public class Classroom {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long clsid;
 
     public Classroom() {
     }
@@ -16,7 +17,11 @@ public class Classroom {
         this.grade = grade;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long clsid;
     @Column(name = "grade")
+    @NotEmpty
     private String grade;
 
 
