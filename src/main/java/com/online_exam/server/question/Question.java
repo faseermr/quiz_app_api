@@ -31,7 +31,7 @@ public class Question {
     @Column(name = "correct_ans")
     private  String correct_ans;
 
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @ManyToOne(fetch = FetchType.EAGER,optional = false)
     @JoinColumn(name = "subid")
     private Subject subject;
 
