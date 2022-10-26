@@ -22,9 +22,8 @@ public class Student {
     @Column(name = "password")
     private String password;
 
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @ManyToOne(fetch = FetchType.EAGER,optional = false)
     @JoinColumn(name = "clsid")
-    @JsonIgnore
     private Classroom classroom;
 
     public Student() {
@@ -87,4 +86,6 @@ public class Student {
                 ", classroom=" + classroom +
                 '}';
     }
+
+
 }

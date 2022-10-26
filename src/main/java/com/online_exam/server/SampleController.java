@@ -8,6 +8,7 @@ public class SampleController {
 
     @GetMapping
     public String getData(){
+        System.out.println("Hello");
         return "Hello World! I am excited to learn springboot";
     }
 }

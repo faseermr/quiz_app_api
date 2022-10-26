@@ -21,7 +21,8 @@ public class ClassroomController {
 
     @PostMapping("/classrooms")
    Classroom addClassroom( @RequestBody Classroom classroom){
-    Classroom _classroom = classroomRepositary.save(new Classroom(classroom.getGrade()));
+   // Classroom _classroom = classroomRepositary.save(new Classroom(classroom.getGrade()));
+        Classroom _classroom = classroomRepositary.save(classroom);
     return _classroom;
    }
     @GetMapping("/classrooms/{id}")

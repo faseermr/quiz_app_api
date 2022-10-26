@@ -25,9 +25,9 @@ public class SubjectController {
     public ResponseEntity<List<Subject>> getAllSubject() {
         try {
             List<Subject> subjects = new ArrayList<Subject>();
-            subjects = subjectRepositary.findAllSubject();
+            //subjects = subjectRepositary.findAllSubject();
 
-            //subjectRepositary.findAllSubject().forEach(subjects::add);
+            subjectRepositary.findAllSubject().forEach(subjects::add);
             System.out.println("subject :"+subjects);
             return new ResponseEntity<>(subjects, HttpStatus.OK);
         }catch (Exception e){
